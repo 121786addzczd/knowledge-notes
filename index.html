@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Googleマップを開くテスト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    input {
+      width: 100px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Googleマップを開く</h2>
+
+  <label>緯度: <input id="latitude" type="text" value="35.681236"></label>
+  <label>経度: <input id="longitude" type="text" value="139.767125"></label>
+  <button onclick="openMapApp()">地図アプリで開く</button>
+
+  <script>
+    function openMapApp() {
+      const lat = parseFloat(document.getElementById('latitude').value);
+      const lng = parseFloat(document.getElementById('longitude').value);
+
+      if (!isNaN(lat) && !isNaN(lng)) {
+        const ua = navigator.userAgent.toLowerCase();
+        let url = '';
+       
+        url = `https://www.google.com/maps?q=${lat},${lng}`;
+
+        window.open(url, '_blank');
+      } else {
+        alert('緯度または経度が無効です');
+      }
+    }
+  </script>
+
+</body>
+</html>
