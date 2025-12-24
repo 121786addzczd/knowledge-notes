@@ -70,11 +70,6 @@
   npx playwright test --headed
   ```
   ブラウザを目視しながら挙動確認。
-- 低速モード（操作を遅くする）
-  ```sh
-  npx playwright test --headed --slow-mo=500
-  ```
-  操作が速すぎて追えないときに有効。
 - デバッガ起動
   ```sh
   PWDEBUG=1 npx playwright test
